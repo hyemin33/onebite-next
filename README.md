@@ -69,3 +69,4 @@ Page Router에 대한 내용을 실습합니다.
   ```
 
 - getServerSideProps는 서버쪽에서 실행하기 때문에 브라우저 객체는 사용하지 못한다.
+- getServerSideProps에는 context라는 매개변수를 사용하여 다양한 정보를 가져올 수 있다. (쿼리 값 등등)
