@@ -49,3 +49,23 @@ Page Router에 대한 내용을 실습합니다.
 - Next는 사전 렌더링 중에 데이터 페칭까지 진행하기 때문에 리액트보다 데이터 요청 시간이 앞당겨지게 된다. 그로인해 사용자는 추가 데이터 로딩 없이 데이터 페칭이 완료된 페이지를 바로 볼 수 있다.
 - 만약 사전 렌더링 과정 중 데이터 페칭의 용량이 크거나 느려질 경우, 빌드타임에 렌더링을 맞춰두는 설정을 할 수 있다. = SSG
 - Next에는 SSR, SSG, ISR이 존재한다.
+
+8. SSR
+
+- 가장 기본적인 사전 렌더링 방식으로 요청이 들어올 때 마다 사전 렌더링을 진행한다.
+- `getServerSideProps` 함수를 사용하면 SSR로 내보낼 수 있다. 컴포넌트보다 먼저 실행되어서 컴포넌트에 필요한 데이터를 불러오는 함수이다.
+  type은 `InferGetServerSidePropsType`로 사용한다.
+
+  ```
+  export const getServerSideProps = () => {
+  const data = "hello";
+
+    return {
+      props: {
+        data,
+      },
+    };
+  };
+  ```
+
+- getServerSideProps는 서버쪽에서 실행하기 때문에 브라우저 객체는 사용하지 못한다.
