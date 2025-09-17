@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { ReactNode, useEffect, useState } from "react";
-import style from "./searchable-layout.module.css"
+import style from "./searchable-layout.module.css";
 
 export default function SearchableLayout({
   children,
@@ -11,6 +11,7 @@ export default function SearchableLayout({
   const [search, setSearch] = useState("");
 
   const q = router.query.q as string;
+
   useEffect(() => {
     setSearch(q || "");
   }, [q]);
@@ -34,14 +35,12 @@ export default function SearchableLayout({
     <div>
       <div className={style.searchbar_container}>
         <input
-          placeholder="검색어를 입력해주세요.."
           value={search}
-          onChange={onChangeSearch}
           onKeyDown={onKeyDown}
+          onChange={onChangeSearch}
+          placeholder="검색어를 입력하세요 ..."
         />
-        <button type="button" onClick={onSubmit}>
-          검색
-        </button>
+        <button onClick={onSubmit}>검색</button>
       </div>
       {children}
     </div>
