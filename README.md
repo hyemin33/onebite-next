@@ -126,6 +126,16 @@ Page Router에 대한 내용을 실습합니다.
 - 요청을 받을 때 마다 ISR 페이지를 다시 생성한다. (게시글 수정,삭제 시 동작함)
 
 ---
+
 12. SEO 설정
+
 - meta tag를 각 페이지별로 설정이 가능하다.
 - SSG fallback 상태일때도 작동하도록 기본 meta tag를 추가해준다.
+
+---
+
+<br/><br/>
+
+## section03 App Router
+
+- page.tsx 만 경로로 인정된다.
