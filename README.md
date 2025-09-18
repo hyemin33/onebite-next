@@ -138,8 +138,10 @@ Page Router에 대한 내용을 실습합니다.
 
 ## section03 App Router
 
+1. 경로
+
 - page.tsx 만 경로로 인정된다.
-- 쿼리스트링, 파라미터 등은 Page 컴포넌트의 props에 자동으로 전달된다. SSR이라 비동기이기 때문에 Promise 를 사용해서 꺼내와야 한다. 
+- 쿼리스트링, 파라미터 등은 Page 컴포넌트의 props에 자동으로 전달된다. SSR이라 비동기이기 때문에 Promise 를 사용해서 꺼내와야 한다.
   ```
   export default async function Page({
     params,
@@ -148,3 +150,10 @@ Page Router에 대한 내용을 실습합니다.
   }) { ... }
   ```
 - 동적 경로를 동적으로 쓰고 싶다면 Catch All Segment로 설정한다. (= [...id])
+
+---
+
+2. 레이아웃
+
+- layout 파일을 만들면 해당 경로의 page를 감싸는 형태가 된다.
+- 특정 경로에만 보이게 하는 layout을 설정하고 싶다면 라우트 그룹을 사용한다. () 괄호를 사용하여 폴더를 만든다. 이때 ()는 경로에 영향을 주지 않는다.
