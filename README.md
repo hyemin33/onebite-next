@@ -139,3 +139,12 @@ Page Router에 대한 내용을 실습합니다.
 ## section03 App Router
 
 - page.tsx 만 경로로 인정된다.
+- 쿼리스트링, 파라미터 등은 Page 컴포넌트의 props에 자동으로 전달된다. SSR이라 비동기이기 때문에 Promise 를 사용해서 꺼내와야 한다. 
+  ```
+  export default async function Page({
+    params,
+  }: {
+    params: Promise<{ id: string }>;
+  }) { ... }
+  ```
+- 동적 경로를 동적으로 쓰고 싶다면 Catch All Segment로 설정한다. (= [...id])
