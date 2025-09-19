@@ -199,3 +199,10 @@ Page Router에 대한 내용을 실습합니다.
 7. 프리패칭 간략 설명
 
 - App Router에서는 Static 또는 Dynamic 2가지 뿐이다. Static은 RSC와 JS번들 2가지를 모두 받아오고(프리패치), Dynamic은 RSC만 받아오고 향후에 페이지를 이동했을때 JS번들을 받는다.
+
+---
+
+8. query 불러오기
+
+- App Router에서는 router에서 query를 가져올 수 없다. 이는 AppRouterInstance에는 query속성이 없기 때문이다.
+  useSearchParams(next/navigation)를 사용하여 파라미터를 가져온다.
